@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css"/>
+     
+        <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
+        crossorigin="anonymous">
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" 
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" 
+        crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+       
+         <section class="front_page">
+          <button id="adm_hom" class="btn btn-success btn-block" style="position: absolute; margin-top: 500px; margin-left:90%" onclick="logOutadmin()">log out</button>
+            <header class="header" style="color:white;">
+              <h3>COMMUNITY LIBRARY</h3>
+              
+            </header>
+           
+ 
+</div>
+<div class="sidebar2">
+
+<div id="add_books" onclick="window.location='add books.html'">manage books
+
+</div>
+
+<div id="requests" onclick="display_requests()"> request
+
+</div>
+<div id="accepted_requests" onclick="display_accepted_requests()">accepted requests
+
+</div>
+<div id="overdue_requests" onclick="display_overdue_requests()"> overdue requests
+
+</div>
+<div id="users_online" onclick="display_users_online()"> users online
+
+</div>
+</div>
+
+ 
+
+
+
+
+     <div class="displayDIV">
+
+<div id="book_requests_admin" style="background-color: whitesmoke; width:inherit; position:relative">BOOK REQUESTS</div>
+    
+            
+     <div id="overdue_requests_admin" style="background-color: whitesmoke; width:inherit; position:relative">OVERDUE BOOKS</div>
+
+    <div id="users_online_admin" style="background-color: whitesmoke; width:inherit; position:relative">USERS ONLINE</div>
+
+  <div id="accepted_requests_admin" style="background-color: whitesmoke; width:inherit; position:relative">ACCEPTED REQUESTS</div>
+
+</div>   
+         </section>          
+           
+
+
+        <script src="admin credentials.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+            
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+        <script src="config.js"></script>
+     
+       <script>
+function display_requests(){
+    console.log("true");
+   document.getElementById('requests').style.background='blue';
+   document.getElementById('accepted_requests').style.background='none';
+    document.getElementById('overdue_requests').style.background='none';
+    document.getElementById('users_online').style.background='none';
+   
+
+    
+  var state=document.getElementById("book_requests_admin").style.display;  
+  document.getElementById("overdue_requests_admin").style.display='none';
+  document.getElementById("users_online_admin").style.display='none';
+  document.getElementById("accepted_requests_admin").style.display='none';
+      
+  if(state=='none'){
+  
+  document.getElementById("book_requests_admin").style.display='inline-block';
+  document.getElementById("book_requests_admin").style.color="black";
+  
+  }
+  else{
+    document.getElementById('requests').style.background='none';
+  document.getElementById("book_requests_admin").style.display='none';
+  document.getElementById("book_requests_admin").style.color="black";
+  
+
+  }
+}
+
+
+function display_accepted_requests(){
+    console.log("true");
+    document.getElementById('requests').style.background='none';
+   document.getElementById('accepted_requests').style.background='blue';
+    document.getElementById('overdue_requests').style.background='none';
+    document.getElementById('users_online').style.background='none';
+   
+
+    
+  var state=document.getElementById("accepted_requests_admin").style.display;  
+  document.getElementById("overdue_requests_admin").style.display='none';
+  document.getElementById("users_online_admin").style.display='none';
+  document.getElementById("book_requests_admin").style.display='none';
+      
+  if(state=='none'){
+  
+  document.getElementById("accepted_requests_admin").style.display='inline-block';
+  document.getElementById("accepted_requests_admin").style.color="black";
+  
+  }
+  else{
+    document.getElementById('accepted_requests').style.background='none';
+  document.getElementById("accepted_requests_admin").style.display='none';
+  document.getElementById("accepted_requests_admin").style.color="black";
+  
+
+  }}
+
+function display_overdue_requests(){
+    console.log("true");
+    document.getElementById('requests').style.background='none';
+   document.getElementById('accepted_requests').style.background='none';
+    document.getElementById('overdue_requests').style.background='blue';
+    document.getElementById('users_online').style.background='none';
+   
+
+    
+  var state=document.getElementById("overdue_requests_admin").style.display;  
+  document.getElementById("accepted_requests_admin").style.display='none';
+  document.getElementById("users_online_admin").style.display='none';
+  document.getElementById("book_requests_admin").style.display='none';
+      
+  if(state=='none'){
+  
+  document.getElementById("overdue_requests_admin").style.display='inline-block';
+  document.getElementById("overdue_requests_admin").style.color="black";
+  
+  }
+  else{
+    document.getElementById('overdue_requests').style.background='none';
+  document.getElementById("overdue_requests_admin").style.display='none';
+  document.getElementById("overdue_requests_admin").style.color="black";
+  
+
+  }
+}
+
+function display_users_online(){
+    console.log("true");
+    document.getElementById('requests').style.background='none';
+   document.getElementById('accepted_requests').style.background='none';
+    document.getElementById('overdue_requests').style.background='none';
+    document.getElementById('users_online').style.background='blue';
+   
+
+    
+  var state=document.getElementById("users_online_admin").style.display;  
+  document.getElementById("accepted_requests_admin").style.display='none';
+  document.getElementById("overdue_requests_admin").style.display='none';
+  document.getElementById("book_requests_admin").style.display='none';
+      
+  if(state=='none'){
+  
+  document.getElementById("users_online_admin").style.display='inline-block';
+  document.getElementById("users_online_admin").style.color="black";
+  
+  }
+  else{
+    document.getElementById('users_online').style.background='none';
+  document.getElementById("users_online_admin").style.display='none';
+  document.getElementById("users_online_admin").style.color="black";
+  
+
+  }
+}
+
+
+var bookreference=firebase.database().ref().child("book_request/");
+
+bookreference.on("value",(snapshot)=>{ 
+  document.getElementById("book_requests_admin").innerHTML="";
+document.getElementById("book_requests_admin").innerHTML='BOOK REQUESTS';
+   snapshot.forEach(function(childsnapshot) {
+var item =childsnapshot.val() 
+var bkrqst="";
+
+bkrqst+="<div id='DIV "+item.tittle+"' class'container' dispay'inline'  style='width:650px; background-color:rgb(169, 190, 169); padding:5px 5px; font-weight:600px; box-shadow:5px 5px; margin-left:20px; border-radius:10px;'>";
+bkrqst+="<p >  "+item.genre+"</p>";
+bkrqst+="<p >  "+item.tittle+"</p>";
+bkrqst+="<p >  "+item.email+"</p>";
+bkrqst+="<p >"+item.uid+"</p>";
+bkrqst+="<button id='"+item.tittle+"' onclick='acceptRequest(this.id)' class='btn btn-success btn-block'>accept</button>" ;
+bkrqst+="<hr>"; 
+
+bkrqst+="</div>";
+bkrqst+="<hr style='height:10px; background:blue;'>"; 
+document.getElementById("book_requests_admin").innerHTML+=bkrqst;
+console.log(item);
+if(snapshot.exists()){
+   document.getElementById("requests").style.background='red';
+}
+
+   document.getElementById("requests").style.background='black';
+
+
+});
+});
+
+
+function acceptRequest(clicked){
+
+var date=new Date();
+var initial_date=new Date(date.getFullYear(), date.getMonth(),date.getDate());
+var enc=encodeURIComponent(initial_date);
+var b= document.getElementById("DIV "+clicked).innerHTML;
+console.log(b);
+console.log(clicked);
+var chu= document.getElementById("DIV "+clicked).childNodes;
+  console.log(chu[0].innerHTML);
+console.log(chu[1].innerHTML);
+console.log(chu[2].innerHTML);
+console.log(chu[3].innerHTML);
+
+
+var genre=chu[0].innerHTML;
+var tittle=chu[1].innerHTML;
+  var email=chu[2].innerHTML;
+  var uid=chu[3].innerHTML;
+
+
+
+firebase.database().ref("accepted_requests/"+tittle).set({
+genre: genre,
+tittle: tittle,
+email: email,
+date: enc
+
+}
+,
+   (error) => {
+    if (error) {
+      // The write failed...
+    } else {
+     alert("SUCCESSFUL**");
+    }
+  
+  });
+firebase.database().ref(uid+"/borrowed_books/"+tittle).set({
+genre: genre,
+tittle: tittle,
+date: enc
+
+});
+
+
+firebase.database().ref('book_request/'+clicked ).set({
+
+});
+
+}
+
+var bookreference=firebase.database().ref().child("overdue_books/");
+
+bookreference.on("value",function(snapshot){
+  document.getElementById("overdue_requests_admin").textContent="";
+document.getElementById("overdue_requests_admin").innerHTML='OVERDUE BOOKS'; 
+   snapshot.forEach(function(childsnapshot) {
+      var item =childsnapshot.val() 
+ 
+     var  adv="";
+     adv+="<div id='O_DIV "+item.tittle+"' class='container' dispay='inline' style='border-radius:10px;width:650px; margin-left:25px; box-shadow:5px 5px 5px 5px; background-color:rgb(186, 212, 186); color:black; font-weight:500px >";
+   adv+="<p id='tittle'> Tittle: "+item.tittle+"</p>";
+     adv+="<p id='author'> Author: "+item.email+"</p>";
+    adv+="<p id='publisher'> Publisher: "+item.uid+"</p>";
+    adv+="<button id='"+item.tittle+"' onclick='clear_book(this.id)' class='btn btn-success btn-block'>clear</button>" ;
+   
+
+   adv+="<hr>";
+    adv+="</div>";
+     document.getElementById("overdue_requests_admin").innerHTML+=adv;
+      console.log(item)
+
+   });
+
+  
+      });  
+
+      var bookreference=firebase.database().ref().child("accepted_requests/");
+     
+      bookreference.on("value",function(snapshot){ 
+        document.getElementById("accepted_requests_admin").textContent="";
+      document.getElementById("accepted_requests_admin").innerHTML="ACCEPTED REQUESTS";
+      snapshot.forEach(function(childsnapshot) {
+      var item =childsnapshot.val() 
+      var  adv="";
+      adv+="<div id='DIV "+item.tittle+"' class='container' dispay='inline' style='border-radius:10px;width:650px; margin-left:25px; box-shadow:5px 5px 5px 5px; background-color:rgb(186, 212, 186); color:black; font-weight:500px >";
+    adv+="<p id='tittle'> Tittle: "+item.genre+"</p>";
+      adv+="<p id='author'> Author: "+item.tittle+"</p>";
+     adv+="<p id='publisher'> Publisher: "+item.email+"</p>";
+  
+    adv+="<hr>";
+     adv+="</div>";
+     document.getElementById("accepted_requests_admin").innerHTML+=adv;
+      console.log(item);
+      });
+      }); 
+
+
+      
+      var bookreference=firebase.database().ref().child("users_online/");
+  
+      bookreference.on("value",function(snapshot){ 
+        document.getElementById("users_online_admin").innerHTML="";
+      document.getElementById("users_online_admin").innerHTML="users online";
+      snapshot.forEach(function(childsnapshot) {
+      var item =childsnapshot.val() 
+      var  adv="";
+      adv+="<div  class='container' dispay='inline' style='border-radius:10px;width:650px; margin-left:25px; box-shadow:5px 5px 5px 5px; background-color:rgb(186, 212, 186); color:black; font-weight:500px >";
+    adv+="<p id='tittle'> name: "+item.email+"</p>";
+ 
+  
+    adv+="<hr>";
+     adv+="</div>";
+     document.getElementById("users_online_admin").innerHTML+=adv;
+      console.log(item);
+      });
+      }); 
+       </script>
+    </body>
+</html>

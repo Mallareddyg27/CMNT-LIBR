@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css"/>
+     
+        <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
+        crossorigin="anonymous">
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" 
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" 
+        crossorigin="anonymous"></script>
+
+
+    </head>
+    <body>
+       
+         <section class="front_page">
+            <button id="adm_hom" class="btn btn-success btn-block" style="position: absolute; margin-top: 500px; margin-left:90%" onclick="window.location='admin front-page.html'">home</button>
+            <div class="sidebar">
+<div class="books" style="color: white;">
+    <h4> BOOKS</h4>
+               <div id="chemistryAdmin" class="chemistry"  onclick="displayChem()">chemistry </div>
+               <div id="biologyAdmin" class="biology"  onclick="displayBio()">biology</div>
+               <div  id="physicsAdmin" class="physics"  onclick="displayPhyc()">physics</div>
+               <div  id="literatureAdmin" class="literature" onclick="displayLitt()">literatuew</div>
+               </div>
+            </div>
+        </div>
+        <div class="displayDIV">
+            <div id="displayCHemAdmin" style="background-color: whitesmoke; width:inherit; position:relative">LIST OF CHEMISTRY BOOKS</div>
+            <div id="displayBioAdmin" style="background-color: whitesmoke; width:inherit; position:relative"> LIST OF BIOLOGY BOOKS</div>
+            <div id="displayPhycAdmin" style="background-color: whitesmoke; width:inherit; position:relative">LIST OF PHYSICS BOOKS</div>
+            <div id="displayLittAdmin" style="background-color: whitesmoke; width:inherit; position:relative" >LIST OF LITTERATURE BOOKS</div>
+        </div>
+         </section>          
+           
+
+
+        <script src="script.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+            
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+        <script src="config.js"></script>
+     <script>
+     function  displayChem(){
+          console.log("d1splaying");
+
+          document.getElementById('biologyAdmin').style.background='none';
+    document.getElementById('chemistryAdmin').style.background='blue';
+    document.getElementById('physicsAdmin').style.background='none';
+    document.getElementById('literatureAdmin').style.background='none';
+
+
+        var state=document.getElementById("displayCHemAdmin").style.display;
+                              document.getElementById("displayBioAdmin").style.display='none';
+                              document.getElementById("displayPhycAdmin").style.display='none';
+                              document.getElementById("displayLittAdmin").style.display='none';
+                              if(state=='none'){
+                              
+                                
+                              document.getElementById("displayCHemAdmin").style.display='inline-block';
+                              document.getElementById("displayCHemAdmin").style.color="black";
+                          
+                           }
+                           else{
+
+                            document.getElementById('chemistryAdmin').style.background='none';
+                              document.getElementById("displayCHemAdmin").style.display='none';
+                              document.getElementById("displayCHemAdmin").style.color="black";
+                          
+                           }                    
+                                  
+      }
+      function    displayBio(){
+
+
+        document.getElementById('biologyAdmin').style.background='blue';
+    document.getElementById('chemistryAdmin').style.background='none';
+    document.getElementById('physicsAdmin').style.background='none';
+    document.getElementById('literatureAdmin').style.background='none';
+
+
+        var state=document.getElementById("displayBioAdmin").style.display;
+                              document.getElementById("displayCHemAdmin").style.display='none';
+                              document.getElementById("displayPhycAdmin").style.display='none';
+                              document.getElementById("displayLittAdmin").style.display='none';
+                              if(state=='none'){
+                              
+                              document.getElementById("displayBioAdmin").style.display='inline-block';
+                              document.getElementById("displayBioAdmin").style.color="black";
+                          
+                           }
+                           else{
+
+                            
+        document.getElementById('biologyAdmin').style.background='none';
+                              document.getElementById("displayBioAdmin").style.display='none';
+                              document.getElementById("displayBioAdmin").style.color="black";
+                          
+                           } 
+      }
+      function    displayPhyc(){
+
+        document.getElementById('biologyAdmin').style.background='none';
+    document.getElementById('chemistryAdmin').style.background='none';
+    document.getElementById('physicsAdmin').style.background='blue';
+    document.getElementById('literatureAdmin').style.background='none';
+
+
+        var state=document.getElementById("displayPhycAdmin").style.display;
+                              document.getElementById("displayCHemAdmin").style.display='none';
+                              document.getElementById("displayBioAdmin").style.display='none';
+                              document.getElementById("displayLittAdmin").style.display='none';
+                              if(state=='none'){
+                              
+                              document.getElementById("displayPhycAdmin").style.display='inline-block';
+                              document.getElementById("displayPhycAdmin").style.color="black";
+                          
+                           }
+                           else{
+
+                            document.getElementById('physicsAdmin').style.background='none';
+                              document.getElementById("displayPhycAdmin").style.display='none';
+                              document.getElementById("displayPhycAdmin").style.color="black";
+                          
+                           } 
+      }
+       function displayLitt(){
+
+        document.getElementById('biologyAdmin').style.background='none';
+    document.getElementById('chemistryAdmin').style.background='none';
+    document.getElementById('physicsAdmin').style.background='none';
+    document.getElementById('literatureAdmin').style.background='blue';
+        
+        var state=document.getElementById("displayLittAdmin").style.display;
+                              document.getElementById("displayCHemAdmin").style.display='none';
+                              document.getElementById("displayBioAdmin").style.display='none';
+                              document.getElementById("displayPhycAdmin").style.display='none';
+                              if(state=='none'){
+                              
+                              document.getElementById("displayLittAdmin").style.display='inline-block';
+                              document.getElementById("displayLittAdmin").style.color="black";
+                          
+                           }
+                           else{
+                            document.getElementById('literatureAdmin').style.background='none';
+                              document.getElementById("displayLittAdmin").style.display='none';
+                              document.getElementById("displayLittAdmin").style.color="black";
+                          
+                           } 
+
+       }
+
+var arr=['chemistry', 'biology','physics','literature'];
+arr.forEach(element => {
+    var bookreference=firebase.database().ref().child("books/"+element);
+         bookreference.on("value",function(snapshot){ 
+
+            if(element=='chemistry'){
+     
+        document.getElementById("displayCHemAdmin").textContent="";
+            document.getElementById("displayCHemAdmin").innerHTML="<b>LIST OF "+element.toLocaleUpperCase()+" BOOKS</b>";
+
+        }
+        if(element=='biology'){
+     
+         document.getElementById("displayBioAdmin").textContent="";
+            document.getElementById("displayBioAdmin").innerHTML="<b>LIST OF "+element.toLocaleUpperCase()+" BOOKS</b> ";
+        }
+        if(element=='physics'){
+
+         document.getElementById("displayPhycAdmin").textContent="";
+            document.getElementById("displayPhycAdmin").innerHTML="<b>LIST OF "+element.toLocaleUpperCase()+" BOOKS</b> ";
+        }
+        if(element=='literature'){
+ 
+         document.getElementById("displayLittAdmin").textContent="";
+            document.getElementById("displayLittAdmin").innerHTML="<b>LIST OF "+element.toLocaleUpperCase()+" BOOKS</b> ";
+
+        }
+          
+      snapshot.forEach(function(childsnapshot) {                
+         var item =childsnapshot.val() 
+    var name=item.publisher;
+        var  adv="";    
+         adv+="<div id='DIV "+item.bookName+"' class='container' dispay='inline' style='border-radius:10px;width:750px; margin-left:25px; box-shadow:5px 5px 5px 5px; background-color:rgb(186, 212, 186); >";
+        adv+="<p ><span style='color:blue;   text-transform: capitalize; font-size:20px; font-weight: 500;'> <strong> genre: </strong></span>"+element+"</p>";
+       adv+="<p id='tittle'><span style='color:blue;   text-transform: capitalize; font-size:20px; font-weight: 500;'> <strong> Tittle: </strong></span>"+item.bookName+"</p>";
+         adv+="<p id='author'><span style='color:blue;   text-transform: capitalize; font-size:20px; font-weight: 500;'> <strong> author: </strong></span>"+item.Author+"</p>";
+        adv+="<p id='publisher'> <span style='color:blue;   text-transform: capitalize; font-size:20px; font-weight: 500;'> <strong> publisher: </strong></span>"+item.publisher+"</p>";
+         adv+="<p id='year'> <span style='color:blue;   text-transform: capitalize; font-size:20px; font-weight: 500;'> <strong> year: </strong></span>"+item.year+"</p>";
+         adv+="<hr>";    
+        adv+="<p id='synopsis'>  <span style='color:blue;   text-transform: capitalize; font-size:20px; font-weight: 500;'> <strong> synopsis: </strong></span>"+item.synopsis+"</p>";
+       
+
+       
+        adv+="</div>";
+        adv+="<hr style='color:blue; height:14px;'>";
+        if(element=='chemistry'){
+        document.getElementById("displayCHemAdmin").innerHTML+=adv;
+         console.log(item)
+        }
+        if(element=='biology'){
+        document.getElementById("displayBioAdmin").innerHTML+=adv;
+         console.log(item)
+        }
+        if(element=='physics'){
+        document.getElementById("displayPhycAdmin").innerHTML+=adv;
+         console.log(item)
+        }
+        if(element=='literature'){
+        document.getElementById("displayLittAdmin").innerHTML+=adv;
+         console.log(item)
+        }
+      });
+    });
+});
+
+     </script>
+       
+    </body>
+</html>

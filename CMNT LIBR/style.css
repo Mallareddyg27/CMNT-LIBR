@@ -1,0 +1,388 @@
+
+
+.index_pg{
+    background-color: rgb(169, 190, 169);
+    position:relative;
+    height:800px;
+width:100%;
+
+}
+
+.background{
+height:600 ;
+background: url(background.jpg);
+
+}
+.login_div{
+background-color: rgb(194, 117, 72);
+opacity:1;
+height:460px;
+width:400px;
+margin-left: 35%;
+margin-top:5%;
+border-radius: 10px;
+}
+.Sign_UP_IN{
+background-color: rgb(156, 196, 171);
+height:90px;
+width: 100%;
+position:relative;
+margin-top: 0%;
+display: flex;
+padding:2px 5px 2px 5px;
+}
+
+
+#signUp_div{
+    margin-top: 50px;
+}
+
+#Sign_in_display{
+position: inherit;
+
+display: block;
+}
+#Sign_up_display{
+    position: inherit;
+    display: block;
+}
+
+
+
+.front_page{
+    background-color: rgb(169, 190, 169);
+    position: absolute;
+height: 800px;
+width:100%; 
+}
+.sidebar{
+    height: 400px;
+    width:180px;
+  background-color:black;
+  color:white;
+   position:absolute;
+    margin-top: 10px;
+    margin-left:0%;
+    opacity: 0.8;
+
+}
+.sidebar2{
+    height: 400px;
+    width:200px;
+  background-color:black;
+   position:absolute;
+   color:white;
+    margin-top: 10px;
+    margin-left:85%;
+    opacity:0.8;
+
+}
+
+
+
+#add_books{
+    display:inline-flex;
+      width:179px;
+      height: 40px;
+      background-color: black;
+      margin-top: 5px;
+      margin-left: 5px;
+    box-shadow: white 1px 1px 1px 1px;
+
+}
+#delete_books{
+    display:inline-flex;
+      width:179px;
+      height: 40px;
+      background-color: black;
+      margin-top: 5px;
+      margin-left: 5px;
+    box-shadow: white 1px 1px 1px 1px;
+
+}
+#requests{
+    display:inline-flex;
+      width:179px;
+      height: 40px;
+      background-color: black;
+      margin-top: 5px;
+      margin-left: 5px;
+    box-shadow: white 1px 1px 1px 1px;
+
+}
+#accepted_requests{
+    display:inline-flex;
+      width:179px;
+      height: 40px;
+      background-color: black;
+      margin-top: 5px;
+      margin-left: 5px;
+    box-shadow: white 1px 1px 1px 1px;
+
+}
+#overdue_requests{
+    display:inline-flex;
+      width:179px;
+      height: 40px;
+      background-color: black;
+      margin-top: 5px;
+      margin-left: 5px;
+    box-shadow: white 1px 1px 1px 1px;
+
+}
+#users_online{
+    display:inline-flex;
+      width:179px;
+      height: 40px;
+      background-color: black;
+      margin-top: 5px;
+      margin-left: 5px;
+    box-shadow: white 1px 1px 1px 1px;
+
+}
+#add_books:hover{
+    background-color: blue;
+}
+
+#delete_books:hover{
+    background-color: blue;
+}
+
+#requests:hover{
+    background-color: blue;
+}
+
+
+#accepted_requests:hover{
+    background-color: blue;
+}
+
+#overdue_requests:hover{
+    background-color: blue;
+}
+
+#users_online:hover{
+    background-color: blue;
+}
+
+
+label{
+
+    height: 40px;
+    width:160px;
+    background:black;
+    color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    position: relative;
+
+
+}
+input[type=checkbox]:checked~ label
+{
+background: red;
+}
+
+input[type=checkbox]
+{
+
+    visibility: hidden;
+}
+.user_profile1{
+display:inline-flex;
+  width:179px;
+  background-color: black;
+box-shadow: white 1px 1px 1px 1px;
+}
+.user_profile2{
+    display:inline-flex;
+      width:179px;
+      background-color: black;
+    box-shadow: white 1px 1px 1px 1px;
+    }
+    .user_profile3{
+        display:inline-flex;
+          width:179px;
+          background-color: black;
+        box-shadow: white 1px 1px 1px 1px;
+        }
+        .user_profile4{
+            display:inline-flex;
+              width:179px;
+              background-color: black;
+            box-shadow: white 1px 1px 1px 1px;
+  
+      }
+      .displayDIV{
+
+        height: 500px;
+        width: 800px;
+        overflow-y: auto;
+        position:absolute;
+        margin-left: 200px;
+      margin-top: 10px;
+        background-color: none;
+        border-radius: 10px;
+        overflow-y: auto;
+        color:black;
+        text-transform: capitalize;
+        font-weight: 500px;
+      }
+.header{
+    background-color:black ;
+    opacity:0.8;
+    height: 50px ;
+}
+#user_prof{
+height: 300px;
+width:200px;
+margin-left: 85%;
+margin-top: 10px;
+position:absolute;
+background-color:blue;
+border-radius:15px
+
+}
+#profilePic{
+background:white;
+height: 100px;
+width:80px;
+margin:10px;
+
+
+}
+ul{
+
+    height: 30px;
+    background-color: blue;
+}
+li{
+    display: inline-block;
+    padding: 0 10px 0 10px;
+    
+    }
+    .chemistry{
+        background-color: black;
+        box-shadow: whitesmoke 1px 1px 1px 1px;
+        width:inherit;
+        height: 50px;
+        position: relative;
+        align-items: center;
+    }
+    .biology{
+        background-color: black;
+        box-shadow: whitesmoke 1px 1px 1px 1px;
+        width:inherit;
+        height: 50px;
+    
+    }
+    .physics{
+        background-color: black;
+        box-shadow: whitesmoke 1px 1px 1px 1px;
+        width:inherit;
+        height: 50px;
+    }
+    
+    .chemistry{
+        background-color: black;
+        box-shadow: whitesmoke 1px 1px 1px 1px;
+        width:inherit;
+        height: 50px;
+    }
+    .literature{
+        background-color: black;
+        box-shadow: whitesmoke 1px 1px 1px 1px;
+        width:inherit;
+        height: 50px;
+
+    }
+    .chemistry:hover{
+        background-color:blue;
+    }
+    
+    .biology:hover{
+        background-color:blue;
+    }
+    .physics:hover{
+        background-color:blue;
+    }
+    .literature:hover{
+        background-color:blue;
+    }
+
+    #checkbox3:hover{
+        background-color:blue;
+    }
+    #checkbox4:hover{
+        background-color:blue;
+    }
+
+  
+          #displayCHem{
+
+            background-color:rgb(4, 151, 4);
+            display:none;
+          }
+
+            #displayBio{
+                background-color:rgb(186, 212, 186);
+                display:none;
+            }
+           #displayPhyc{
+            background-color:rgb(186, 212, 186);
+            display:none;
+           }
+           #displayLitt{
+            background-color:rgb(186, 212, 186);
+            display:none;}
+
+            .add_books{
+                height: 600px;
+                width:100%;
+            background: url(background.jpg);
+        }
+
+        .front_page{
+            height: 900px;
+            width:100%;
+        background: url(background.jpg);   
+        }
+        #deleteDiv{
+            display:none;
+        }
+       #requests_user{
+           display: none;
+        
+       }
+       #borrowed_books_user{
+           display:none;
+       }
+       #overdue_books_user{
+           display: none;
+       }
+       #book_requests_admin{
+           display:none
+       }
+       #overdue_requests_admin{
+           display:none;
+       }
+       #users_online_admin{
+           display:none;
+       }
+       #accepted_requests_admin{
+           display:none;
+       }
+       #displayCHemAdmin{
+           display:none;
+       }
+       #displayBioAdmin{
+           display:none;
+       }
+#displayPhycAdmin{
+    display:none;
+}
+#displayLittAdmin{
+    display:none;  
+}
